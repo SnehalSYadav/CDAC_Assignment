@@ -1,0 +1,44 @@
+/* Element Selectors */
+input {
+    color: darkblue;
+    background-color: #e6f0ff;
+    font-style: italic;
+    border: 2px solid blue;
+}
+
+p {
+    color: #333333;
+    background-color: #f9f9f9;
+    font-style: normal;
+    border: 1px dashed #999;
+}
+
+select {
+    color: #006400;
+    background-color: #eaffea;
+    font-style: oblique;
+    border: 2px dotted green;
+}
+
+/* Class Selectors */
+.moderate {
+    color: #444;
+    background-color: #ddd;
+    font-style: normal;
+    border: 1px solid #aaa;
+}
+
+.gaudy {
+    color: #ff00ff;
+    background-color: yellow;
+    font-style: italic;
+    border: 3px double red;
+}
+
+/* ID Selector */
+#id1 {
+    color: white;
+    background-color: black;
+    font-style: oblique;
+    border: 4px groove gray;
+}

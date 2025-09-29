@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Data Form</title>
+  <style>
+    #name{
+      color: rgb(78, 62, 62);
+    
+    }
+    #InputTable{
+      background-color: aqua;
+      width: 300px;
+      height: 500px;
+      align-items: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+ <label for="Name" >Name: </label>
+ <input type="text" id = "name" placeholder="Enter Name">
+ <br>
+ <br>
+ <label for="EmailId">EmailId: </label>
+ <input type="email " id ="emailId" placeholder="Enter EmailId" >
+  <br>
+  <br>
+  <label for="MobNo">MobNo: </label>
+ <input type="number " id ="mobNo" placeholder="Enter MobileNo">
+  <br>
+  <br>
+  <label for="Address">Address: </label>
+ <input type="text " id ="address" placeholder="Enter Address">
+  <br>
+  <br>
+ <button onclick="addData()">Add</button>
+<br><br>
+ <table id ="InputTable">
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>EmailId</th>
+      <th>MobNo</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </tbody>
+ </table>
+ <script>
+  function addData(){
+      let Name=document.getElementById("name").value
+      let EmailId =document.getElementById("emailId").value
+      let MobNo = document.getElementById("mobNo").value
+      let Address= document.getElementById("address").value
+
+      let table = document.getElementById("InputTable")
+      let newrow = table.insertRow(table.rows.length)
+
+      newrow.insertCell(0).innerHTML = Name;
+      newrow.insertCell(1).innerHTML = EmailId;
+      newrow.insertCell(2).innerHTML = MobNo;
+      newrow.insertCell(3).innerHTML = Address;
+      newrow.insertCell(4).innerHTML = 
+      '<button onclick="editData(this)">Edit</button>'+
+      '<button onclick ="deleteData(this)">Delete</button>';
+      clear();
+  }
+     function editData(button){
+      let row = button.parentNode.parentNode
+
+      let NameCell = row.cells[0];
+      let EmailIdCell = row.cells[1];
+      let MobNoCell = row.cells[2];
+      let AddressCell = row.cells[3];
+      
+      let NameInput = prompt("Enter the name",NameCell.innerHTML);
+       let EmailIdInput = prompt("Enter the EmailId",EmailIdCell.innerHTML);
+        let MobNoInput = prompt("Enter the MobileNo",MobNoCell.innerHTML);
+         let AddressInput = prompt("Enter the Address",AddressCell.innerHTML);
+
+         NameCell.innerHTML=NameInput;
+          EmailIdCell.innerHTML=EmailIdInput;
+          MobNoCell.innerHTML=MobNoInput;
+          AddressCell.innerHTML=AddressInput;
+
+     }
+
+     function deleteData(button){
+      let row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+     }
+
+
+    function clear(){
+      document.getElementById("name").value="";
+      document.getElementById("emailId").value="";
+       document.getElementById("mobNo").value="";
+        document.getElementById("address").value="";
+    }
+ </script>
+</body>
+</html>

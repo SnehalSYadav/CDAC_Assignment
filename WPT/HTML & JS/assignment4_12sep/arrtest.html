@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Array Operations</title>
+</head>
+<body>
+
+  <h3>Array Operations</h3>
+  
+  <input type="text" id="n" placeholder="Enter number" />
+  
+  <button onclick="add()">Add at End</button>
+  <button onclick="addAtStart()">Add at Start</button>
+  <button onclick="deleteEnd()">Delete from End</button>
+  <button onclick="deleteStart()">Delete from Start</button>
+  <button onclick="showOdd()">Display Odd Numbers</button>
+  <button onclick="showEven()">Display Even Numbers</button>
+
+  <p><strong>Array:</strong> <span id="p1"></span></p>
+  <p><strong>Result:</strong> <span id="p2"></span></p>
+
+  <script>
+    const a = [];
+
+    function getValue() {
+      return document.getElementById("n").value.trim();
+    }
+
+    function add() {
+      const val = getValue();
+      if (val !== "") {
+        a.push(Number(val));
+        show();
+      }
+    }
+
+    function addAtStart() {
+      const val = getValue();
+      if (val !== "") {
+        a.unshift(Number(val));
+        show();
+      }
+    }
+
+    function deleteEnd() {
+      a.pop();
+      show();
+    }
+
+    function deleteStart() {
+      a.shift();
+      show();
+    }
+
+    function showOdd() {
+      const oddNumbers = a.filter(num => num % 2 !== 0);
+      document.getElementById("p2").innerText = oddNumbers.join(", ");
+    }
+
+    function showEven() {
+      const evenNumbers = a.filter(num => num % 2 === 0);
+    }

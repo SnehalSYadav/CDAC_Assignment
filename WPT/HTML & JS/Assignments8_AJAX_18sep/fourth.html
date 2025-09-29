@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    "Enter a name"
+    <input type="text" required id="name" minlength="3" maxlength="15"  >
+    <br>
+    <p id="para"></p>
+    <br>
+    <button id="btn" onclick="validation()">submit</button>
+    <script>
+
+    
+        
+
+//  function display(){
+    //  let x = document.getElementById("name").value
+
+    //  if(x==""){
+    //     document.getElementById("para").innerHTML = "Enter the Name first"
+
+    //  }
+    //  else{
+    //     document.getElementById("para").innerHTML = x
+
+    //  }
+    //  } 
+
+       function validation(){
+        let ele = document.getElementById("name")
+        if(ele.checkValidity()){
+            document.getElementById("para").innerHTML = ele.value
+        }
+        else{
+           document.getElementById("para").innerHTML = ele.validationMessage;
+        }
+       }
+    </script>
+
+</body>
+</html>
+

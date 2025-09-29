@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1" style="background-color: rgb(97, 68, 32);width: 60px; height: 60px; position: absolute;top: 0px;left: 20px;"></div>
+    <div id="d2" style="background-color: aquamarine; width: 70px;height: 70px; position: absolute;top: 0px; right: 250px;"></div>
+
+    <script>
+       
+        function myMove() {
+  let id = null;
+  const elem = document.getElementById("d1");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+myMove();
+
+
+    function myMove1() {
+  let id = null;
+  const elem = document.getElementById("d2");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.right = pos + "px"; 
+    }
+  }
+}
+myMove1();
+
+    </script>
+</body>
+</html>

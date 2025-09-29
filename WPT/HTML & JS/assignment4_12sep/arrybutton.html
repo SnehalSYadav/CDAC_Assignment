@@ -1,0 +1,83 @@
+<!-- 
+3) create html page -  with 
+	1 textfield and multiple buttons 
+	
+button captions are - 1)Add at End 
+		 2) Add at Start
+		3) delete from end 
+		4) delete from start
+		5) display odd numbers 
+		6) display even numbers
+hint -  use Array predined methods -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+
+   <body>
+ 
+    <p id="p1"></p>
+     <p id="p2"></p>
+
+    <input type="text" id="n">
+    <button type="button" onclick="add()"> add at end </button>
+    <button type="button" onclick="addAtStart()"> add at start</button>
+    <button type="button" onclick="add()"> add in array</button>
+    <button type="button" onclick="deleteStart()"> delete from start</button>
+     <button type="button" onclick="DleteEnd()"> delete from end</button>
+     <button type="button" onclick="showEven()">Even Numbers: </button>
+     <button type="button" onclick="showOdd()">Odd Numbers: </button>
+
+
+
+    <script>
+ const a = [];
+
+ function add(){
+    let d = document.getElementById("n").value;
+    a.push(d);
+    console.log(a);
+    show();
+ }
+
+  function addAtStart(){
+    let d = document.getElementById("n").value;
+    a.unshift(d);
+    console.log(a);
+    show();
+ }
+  function deleteStart(){
+    let d = document.getElementById("n").value;
+    a.shift(d);
+    console.log(a);
+    show();
+ }
+   function DleteEnd(){
+    let d = document.getElementById("n").value;
+    a.pop(d);
+    console.log(a);
+    show();
+ }
+ 
+ function showOdd() {
+      const oddNumbers = a.filter(num => num % 2 !== 0);
+      document.getElementById("p2").innerText = oddNumbers.join(", ");
+    }
+
+    function showEven() {
+      const evenNumbers = a.filter(num => num % 2 === 0);
+        document.getElementById("p2").innerText = evenNumbers.join(", ");
+    }
+
+function show(){
+document.getElementById("p1").innerHTML = a
+}
+</script>
+</body>
+
+</html>

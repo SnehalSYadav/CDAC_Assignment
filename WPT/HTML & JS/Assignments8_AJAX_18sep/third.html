@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para"></p>
+    <input type="text" id="uid">
+      <table id="tbl" border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <button onclick="loaddata()" id="btn">Add data</button>
+   
+    <script>
+
+        function loaddata(){
+        
+         var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+       if (this.readyState === 4 && this.status === 200) {
+   
+       const x= JSON.parse( this.responseText);
+       let Uid= document.getElementById("uid").value.trim()
+
+         const tbody = document.getElementById("tbody");
+        tbody.innerHTML = "";
+
+       x.forEach(element => {
+        
+        if(element.id == Uid ){
+        const newRow = `
+                <tr>
+                    <td>${element.id}</td>
+                    <td>${element.title}</td>
+                </tr>
+            `;
+            
+        tbody.innerHTML += newRow
+        }
+            
+       });
+
+  
+  }
+            }
+   xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts");
+  xhttp.send();
+}
+    </script>
+</body>
+</html> 
