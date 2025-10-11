@@ -20,7 +20,38 @@ and Perform Oprations with help of UseState Hook
 
 Axios, async await, promise, hooks
 
+function Asyncwait(){
+    // Simulate an async operation
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data fetched!");
+    }, 2000);
+  });
+}
 
+// Using async/await
+async function getData() {
+  console.log("Fetching...");
+   document.getElementById("para").innerHTML="Fetching....."
+  const result = await fetchData(); // Waits here until fetchData resolves
+  console.log(result); // Logs: "Data fetched!"
+    document.getElementById("para").innerHTML=result;
+}
+// Using async/await
+
+    
+    return(
+
+
+        <>
+        <p id="para"></p>
+        <button onClick={getData}>Show</button>
+        </>
+    )
+}
+
+export default Asyncwait
 
 
 
