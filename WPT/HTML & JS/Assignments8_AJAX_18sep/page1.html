@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="name" name="PName">
+
+    </form>
+    <p id="para"></p>
+    <button type="submit" id="btn" onclick="addtofile()">submit</button>
+    <script>
+        function addtofile()
+
+{
+  const obj={
+    name:""
+  } 
+  obj.name=document.getElementById("name").value.trim()
+   document.getElementById("para").innerHTML=`${obj.name}`
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    document.getElementById("response").innerText = this.responseText;
+    
+  };
+   xhttp.open("POST", "testhtml.txt");
+  xhttp.send();
+}  
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Name</title>
+</head>
+<body>
+  <input type="text" id="name" name="PName" placeholder="Enter your name">
+  <button type="button" onclick="addtofile()">Submit</button>
+  <p id="para"></p>
+  <p id="response"></p>
+
+  <script>
+    function addtofile() {
+      const name = document.getElementById("name").value.trim();
+      document.getElementById("para").innerText = name;
+
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+          document.getElementById("response").innerText = this.responseText;
+        }
+      };
+
+      xhttp.open("POST", "testhtml.txt", true); // Replace with your server-side script
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("name=" + encodeURIComponent(name));
+    }
+  </script>
+</body>
+</html>

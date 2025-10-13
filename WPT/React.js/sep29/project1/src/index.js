@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Countermain from './Assignment2_counter';
+import Demo2 from './Assignment3_table';
+import OrderedListInput from './Assignment4';
 import reportWebVitals from './reportWebVitals';
+import Demo from './Assign1_UseEffect';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+ <Countermain /> 
+   <Demo />
+   <Demo2 />
+   <OrderedListInput />
   </React.StrictMode>
 );
 

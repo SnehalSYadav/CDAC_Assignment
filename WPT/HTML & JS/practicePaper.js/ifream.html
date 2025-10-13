@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Date is:</h1> 
+       <h1 id="Date"> </h1>
+       <h1>Time is:</h1> 
+    <h1 id="Time"> </h1>
+
+    <script>
+        setInterval (myFun,1000);
+        function myFun(){
+        let d= new Date();
+      
+         document.getElementById("Date").innerHTML=
+        d.getDate()+  " / "+
+        d.getMonth()+ "  /"+
+        d.getFullYear()
+
+        document.getElementById("Time").innerHTML=
+       
+        d.getHours() + ":" +
+        d.getMinutes() + ":" +
+        d.getSeconds() ;
+        }
+    </script>
+</body>
+</html>
