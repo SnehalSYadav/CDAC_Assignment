@@ -1,0 +1,27 @@
+   WPT    id 
+
+
+	Java   name 
+
+core java   console   scanner 
+
+
+web       html    get      doGet
+		post    doPost 
+
+			
+
+
+
+run web ---- html page    form   input   submit ------ Servlet Java
+
+
+						doGet
+
+						int n  = request.getParameter ("name")
+		
+	response 
+
+	java code   server  
+
+					
